@@ -1,3 +1,10 @@
+/* Основные стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,29 +24,52 @@ body {
 
 .head {
     display: flex;
-    gap: 20px;
     align-items: center;
-}
-
-.Avatar {
-    width: 100px;
-    height: 100px;
+    gap: 30px;
+    padding: 40px;
+    background: linear-gradient(135deg, #F0F0F0, #28D979); /* Градиентный фон */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+  }
+ 
+  .Avatar {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-}
-
-.greetingPhrase {
-    font-size: 1.2em;
-    color: #777;
-}
-
-.name {
-    font-size: 2em;
+    object-fit: cover;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .nameBox {
+    flex: 1;
+  }
+  
+  .greetingPhrase {
+    font-size: 1.5rem;
     font-weight: bold;
-}
-
-.role {
-    color: #555;
-}
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Тень для текста */
+  }
+  
+  .yourInfo .name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 2px; /* Увеличенное межбуквенное расстояние */
+    margin-bottom: 5px;
+  }
+  
+  .yourInfo .role {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px; /* Мелкое расстояние между буквами */
+  }
+  
 
 .languagesBox .title {
     font-weight: bold;
@@ -59,19 +89,427 @@ body {
     margin-bottom: 10px;
 }
 
-.figmaLogo, .aiLogo, .psLogo, .prLogo, .notionLogo, .meetLogo,
-.zapierLogo, .framerLogo, .webFlowLogo, .wordPressLogo,
-.gptLogo, .midjourneyLogo, .copilot {
-    width: 40px;
-    height: 40px;
+.languagesBox {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;  /* Расширяем блок на всю ширину доступного пространства */
+  max-width: 500px;  /* Можно ограничить максимальную ширину, если нужно */
 }
 
-.interestsTitle {
-    font-size: 1.5em;
+.listLanguages {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.language-name {
+  font-size: 18px;
+  color: #333;
+  width: 30%;  /* Ширина для имени языка */
+}
+
+.language-level {
+  width: 65%; /* Ширина блока для шкалы уровня */
+  height: 12px; /* Высота шкалы */
+  background-color: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.level-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 6px;
+}
+
+
+.body {
+  margin-top: 30px;
+}
+
+
+/* Основные стили! */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Градиентный фон */
+    color: #333;
+    line-height: 1.6;
+  }
+  
+
+
+  
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+  }
+  
+  .head img.Avatar {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+  
+  .head img.Avatar:hover {
+    transform: scale(1.1);
+  }
+  
+  .nameBox {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .greetingPhrase {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .yourInfo .name {
+    font-size: 2rem;
     font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .yourInfo .role {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+
+
+/* Контейнер для всех блоков опыта */
+.experience-container {
+  background-color: #f5f5f5; /* Бежевый фон для контейнера */
+  border-radius: 16px; /* Закругленные углы */
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 2; /* Контейнер Experience занимает большую часть ширины */
 }
 
-.emailText {
-    font-size: 1em;
-    color: #0073e6;
+/* Общие стили для каждого блока */
+.experience-frame {
+  opacity: 0;
+  transform: scale(0.8) translateY(10px); /* Начинаем с маленького размера и немного сдвигаем вниз */
+  animation: fadeInUp 1s ease-out forwards;
+  transition: transform 0.3s ease-in-out; /* Плавная анимация для увеличения */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для фрейма */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Зеленый блок с анимацией */
+.experience-item {
+  background-color: #28D979; /* Зеленый цвет */
+  color: white; /* Белый цвет текста */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #000000; /* Черная обводка */
+  animation: experienceItemAnimation 0.8s ease-out forwards; /* Анимация появления */
+}
+
+
+.experience-item .date {
+  animation-delay: 0.3s;
+}
+
+.experience-item .most-recent {
+  animation-delay: 0.6s;
+}
+
+.experience-item .role {
+  animation-delay: 0.9s;
+}
+
+.experience-item .company-info {
+  animation-delay: 1.2s;
+}
+
+/* Анимация увеличения при наведении */
+.experience-item:hover {
+  transform: scale(1.05); /* Увеличение при наведении */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Сильная тень для выделения */
+}
+
+/* Дополнительные стили */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 16px;
+  color: #000;
+}
+
+.most-recent {
+  font-size: 14px;
+  color: #DDF163;
+  background-color: #7E731266;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.role {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.company-info {
+  font-size: 16px;
+  color: #000;
+  margin-top: 5px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+  }
+}
+
+
+.experience-item p {
+  margin: 5px 0;
+}
+
+.experience-item ul {
+  margin-top: 10px;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Белый фон и черный контур для второго и третьего блока */
+.experience-container .experience-frame.white-background {
+  background-color: #FFF; /* Белый фон */
+  color: #000; /* Черный текст */
+  border: 2px solid #000000; /* Черная обводка */
+}
+
+/* Анимация появления с небольшим сдвигом вверх */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Анимация для зеленого блока */
+@keyframes experienceItemAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Анимация увеличения при наведении */
+.experience-frame:hover {
+  transform: scale(1.05); /* Увеличение при наведении */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Сильная тень для выделения */
+}
+
+/* Дополнительные стили */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 16px;
+  color: #000;
+}
+
+.most-recent {
+  font-size: 14px;
+  color: #DDF163;
+  background-color: #7E731266;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.job-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.role-and-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.role {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.company-info {
+  font-size: 16px;
+  color: #000;
+  margin-top: 5px;
+}
+
+.job-description {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.job-description ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.job-description li {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+  }
+}
+
+/* Контейнер для блоков Experience и Tools */
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Расстояние между блоками */
+  gap: 20px; /* Пространство между блоками */
+  height: 100%; /* Обеспечивает, что контейнер растягивается по высоте */
+}
+
+/* Стили для блока Experience */
+.experience-container {
+  flex: 3; /* Этот блок будет занимать 3 части */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  height: 100%; /* Блок растягивается по высоте */
+  overflow-y: auto; /* Прокрутка в случае излишка контента */
+}
+
+/* Стили для блока Tools */
+.tools-wrapper {
+  flex: 1; /* Этот блок занимает 1 часть */
+  padding: 20px;
+  background-color: #f5f5f5; /* Бежевый фон */
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Растягиваем блок по высоте */
+  gap: 40px; /* Увеличиваем пространство между категориями */
+}
+
+/* Заголовок Tools */
+.tools-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.1px; /* Отступ снизу от заголовка */
+}
+
+/* Стили для блока инструментов (Design, No-code, AI) */
+.tools-box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Увеличиваем пространство между категориями */
+  flex-grow: 1; /* Равномерно растягиваем блоки по высоте */
+}
+
+/* Стили для каждой категории (Design, No-code, AI) */
+.tools-category {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* Равномерно распределяем пространство внутри блока */
+  margin-bottom: 20px; /* Увеличиваем отступ снизу */
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+/* Стили для иконок в каждой категории */
+.icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Два иконки в ряду */
+  gap: 10px;
+  justify-items: center;
+  height: 100%; /* Растягиваем иконки по высоте */
+}
+
+/* Размеры иконок */
+.icon img {
+  width: 40px; /* Размер иконок */
+  height: 40px;
+  object-fit: contain;
+}
+
+
+.download-button {
+  position: fixed;
+  bottom: 100px; /* Устанавливает кнопку ниже, чем панель tools (предположим, панель 100px) */
+  right: 20px; /* Располагает кнопку на 20px левее от правой границы */
+  background-color: #4CAF50; /* Зеленый фон кнопки */
+  color: white; /* Белый цвет текста */
+  border: none; /* Без рамки */
+  padding: 10px 20px; /* Уменьшенный отступ внутри кнопки */
+  font-size: 14px; /* Меньший размер шрифта */
+  border-radius: 5px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
+  cursor: pointer; /* Курсор в виде указателя при наведении */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Плавные переходы */
+}
+
+.download-button:hover {
+  background-color: #45a049; /* Более темный зеленый при наведении */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+}
+
