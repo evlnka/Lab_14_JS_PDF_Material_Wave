@@ -1,144 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-<div class="main">
-  <div class="head">
-    <img class="Avatar" src="assets/images/avatar.jpg" />
-    <div class="nameBox">
-      <div class="greetingPhrase">hello iam</div>
-      <div class="yourInfo">
-        <div class="name">Karthik SR</div>
-        <div class="role">UX/UI Designer</div>
-      </div>
-    </div>
-    <div class="languagesBox">
-      <div class="title">Languages</div>
-      <div class="listLanguages">
-        <div class="nameLangueages">
-          <div class="english">English</div>
-          <div class="malayalam">Malayalam</div>
-          <div class="hindi">Hindi</div>
-        </div>
-        <div class="lvlLang">
-          <div class="lvlEnglish"></div>
-          <div class="lvlMalayalam"></div>
-          <div class="lvlHindi"></div>
+  <div class="main">
+    <!-- Блок с аватаром и основным профилем -->
+    <div class="head">
+      <img class="Avatar" src="assets/images/profileImg.jpg" />
+      <div class="nameBox">
+        <div class="greetingPhrase">Hello 👋🏻 I’m</div>
+        <div class="yourInfo">
+          <div class="name">Karthik SR</div>
+          <div class="role">UX/UI Designer</div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="body">
-    <div class="expBox">
-      <div class="title">Experience</div>
-      <div class="jobList">
-        <div class="lastJob">
-          <div class="topBar">
-            <div class="date">Jun. 2023 - Present</div>
-            <div class="teg">
-              <div class="tegText">most recent</div>
+      <div class="languagesBox">
+        <div class="title">Languages</div>
+        <div class="listLanguages">
+          <div class="language-item">
+            <div class="language-name">English</div>
+            <div class="language-level">
+              <div class="level-bar" style="width: 100%;"></div>
             </div>
           </div>
-          <div class="content">
-            <div class="jobInfo">
-              <div class="roleName">Marketing Manager</div>
-              <div class="aboutJob">
-                <div class="companyName">Pankayam</div>
-                <div class="separate">|</div>
-                <div class="info">Full-time</div>
+          <div class="language-item">
+            <div class="language-name">Malayalam</div>
+            <div class="language-level">
+              <div class="level-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <div class="language-name">Hindi</div>
+            <div class="language-level">
+              <div class="level-bar" style="width: 60%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+    
+    <!-- Основной блок контента -->
+    <div class="content">
+      <div class="flex-container">
+        <!-- Блок Experience -->
+        <div class="experience-container">
+          <div class="experience-title">
+            <h2>Experience</h2>
+          </div>
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="date">Jun. 2023 - Present</div>
+              <div class="most-recent">Most Recent</div>
+            </div>
+            <div class="job-details">
+              <div class="role-and-description">
+                <div class="role">Marketing Manager</div>
+                <div class="company-info">Pankayam | Full-time</div>
+              </div>
+              <div class="job-description">
+                <ul>
+                  <li>• Strategy development and planning of campaigns that promote the business and generate genuine traffic.</li>
+                  <li>• SEO Content Creation for Blogs, Website, Social media.</li>
+                </ul>
               </div>
             </div>
-            <div class="featuredPoints">
-              <ul class="ulText">
-                <li>
-                  Strategy development and planning of campaigns that promote the business and generate genuine traffic
-                </li>
-                <li>SEO Content Creation for Blogs, Website, Social media</li>
-              </ul>
+          </div>
+  
+          <div class="experience-frame white-background bordered">
+            <div class="experience-header">
+              <div class="date">2017 - Present</div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- Other job sections -->
-    </div>
-    <div class='toolsBox'>
-      <div class='title-tools'>Tools</div>
-      <div class='tools'>
-        <div class='design-tools'>
-          <div class='design-teg'>
-            <div class='designTegText'>design</div>
-          </div>
-          <div class='col-1'>
-            <img class='figmaLogo' src='assets/images/figma-icon.svg'>
-            <img class='aiLogo' src='assets/images/adobe-illustrator-cc-3.svg'>
-            <img class='notionLogo' src='assets/images/notion-1-1.svg'>
-          </div>
-          <div class='col-2'>
-            <img class='psLogo' src='assets/images/adobe-photoshop-2.svg'>
-            <img class='prLogo' src='assets/images/premiere-pro-cc.svg'>
-            <img class='meetLogo' src='assets/images/google-meet-icon-2020.svg'>
-          </div>
-        </div>
-        <!-- Other tool sections -->
-      </div>
-    </div>
-  </div>
-  <div class='foot'>
-    <div class='EducationBox'>
-      <div class='EducationTitle'>Education</div>
-      <div class='EducationContent'>
-        <div class='column-1'>
-          <div class='lastEducation'>
-            <div class='educationTopBar'>
-              <div class='topText'>2023</div>
-              <img class='yellowHeart' src='assets/images/yellow-heart.svg'>
-            </div>
-            <div class='educationContent'>
-              <div class='nameTitle'> UI/UX</div>
-              <div class='tags'>
-                <div class='row-1'>
-                  <div class='tag-1'>#UX</div>
-                  <div class='tag-2'>#UI</div>
-                  <div class='tag-3'>#research</div>
-                </div>
+            <div class="job-details">
+              <div class="role-and-description">
+                <div class="role">Graphic / Web Designer</div>
+                <div class="company-info">Freelance</div>
+              </div>
+              <div class="job-description">
+                <ul>
+                  <li>• Development of internal projects from scratch, product design of brands.</li>
+                  <li>• Landing page, webapps and hybrid apps.</li>
+                  <li>• Coordinating with outside agencies, art services, web designers, marketing, printers, and colleagues as necessary.</li>
+                </ul>
               </div>
             </div>
-            <div class='schoolName'>Coursera</div>
+          </div>
+          
+          <div class="experience-frame white-background bordered">
+            <div class="experience-header">
+              <div class="date">Sep. 2021 - Jun. 2023</div>
+            </div>
+            <div class="job-details">
+              <div class="role-and-description">
+                <div class="role">Legal Assistant</div>
+                <div class="company-info">Law Firm | Intern</div>
+              </div>
+              <div class="job-description">
+                <ul>
+                  <li>• Provide administrative support to lawyer and enhance office effectiveness.</li>
+                  <li>• Handle communication with clients, witnesses, etc.</li>
+                  <li>• Prepare case briefs and summarize depositions, interrogatories and testimony.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Other education sections -->
-      </div>
-    </div>
-    <div class='extraBox'>
-      <div class='interestsBox'>
-        <div class='interestsTitle'> Interests </div>
-        <div class='interestsContent'>
-          <div class='rowInt-1'>
-            <div class='tegInt-1'>
-              <div class='tegIntText-1'>branding</div>
+  
+        <!-- Блок Tools -->
+        <div class="tools-wrapper">
+          <h2 class="tools-title">Tools</h2> <!-- Добавляем заголовок Tools -->
+          <div class="toolsBox">
+            <!-- Блок Design -->
+            <div class="tools-category design">
+              <div class="category-title">Design</div>
+              <div class="icons">
+                <div class="icon"><img class="figmaLogo" src="assets/images/logoFigma.svg" alt="Figma"></div>
+                <div class="icon"><img class="psLogo" src="assets/images/icon _adobephotoshop_@2x.svg" alt="Photoshop"></div>
+                <div class="icon"><img class="aiLogo" src="assets/images/icon _adobeillustrator_.svg" alt="Adobe Illustrator"></div>
+                <div class="icon"><img class="prLogo" src="assets/images/icon _adobepremiere.svg" alt="Adobe Premiere"></div>
+                <div class="icon"><img class="notionLogo" src="assets/images/logoNotion.svg" alt="Notion"></div>
+                <div class="icon"><img class="meetLogo" src="assets/images/logoMeet.svg" alt="Meet"></div>
+              </div>
             </div>
-            <div class='tegInt-2'>
-              <div class='tegIntText-2'>design</div>
+
+            <!-- Блок No-code -->
+            <div class="tools-category no-code">
+              <div class="category-title">No-code</div>
+              <div class="icons">
+                <div class="icon"><img src="assets/images/logoZapìer 1.svg" alt="Zapìer"></div>
+                <div class="icon"><img src="assets/images/logoWebflow.svg" alt="Webflow"></div>
+                <div class="icon"><img src="assets/images/logoFramer.svg" alt="Framer"></div>
+                <div class="icon"><img src="assets/images/logoWordpress.svg" alt="Wordpress"></div>
+              </div>
+            </div>
+
+            <!-- Блок Artificial Intelligence -->
+            <div class="tools-category ai">
+              <div class="category-title">Artificial Intelligence</div>
+              <div class="icons">
+                <div class="icon"><img src="assets/images/logoChatGPT 1.svg" alt="ChatGPT"></div>
+                <div class="icon"><img src="assets/images/logoCopilot 1.svg" alt="Copilot"></div>
+                <div class="icon"><img src="assets/images/logoMidjourney 1.svg" alt="Midjourney"></div>
+              </div>
             </div>
           </div>
-          <!-- Other interests sections -->
-        </div>
+        </div> 
+
       </div>
-      <div class='contact'>
-        <div class='contactTitle'>
-          Let´s chat! I´m ready to work on exciting projects
-        </div>
-        <div class='email'>
-          <div class='emailText'>srkarthik.designscape@gmail.com</div>
-        </div>
+      <div class="content">
+        <button id="downloadPDF" class="download-button">Download PDF</button>
       </div>
     </div>
-  </div>
-</div>
-</body>
-</html>
+  
+    <script>
+      document.getElementById('downloadPDF').addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF('p', 'mm', 'a4'); // Устанавливаем формат страницы A4
+  
+        // Используем html2canvas с колбэком
+        html2canvas(document.body, {
+          scale: 2, // Увеличиваем разрешение изображения
+          scrollX: 0, // Сбрасываем прокрутку по оси X
+          scrollY: -window.scrollY // Учитываем прокрутку по оси Y
+        }).then(function(canvas) {
+          const imgData = canvas.toDataURL('image/png');
+  
+          // Устанавливаем размер изображения в PDF, чтобы оно не выходило за пределы страницы
+          const imgWidth = doc.internal.pageSize.width;
+          const imgHeight = canvas.height * imgWidth / canvas.width;
+  
+          doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+          doc.save("portfolio.pdf");
+        }).catch(function(error) {
+          console.error('Ошибка при захвате экрана:', error);
+        });
+      });
+    </script>
+  </body>
+  </html>
