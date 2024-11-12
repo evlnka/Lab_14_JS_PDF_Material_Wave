@@ -152,35 +152,19 @@
           </div>
         </div> 
 
-      </div>
-      <div class="content">
-        <button id="downloadPDF" class="download-button">Download PDF</button>
-      </div>
-    </div>
-  
+      <a href="#" id="downloadLink">
+        <button class="download-button">Скачать PDF</button>
+    </a>
+    
     <script>
-      document.getElementById('downloadPDF').addEventListener('click', function() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF('p', 'mm', 'a4'); // Устанавливаем формат страницы A4
-  
-        // Используем html2canvas с колбэком
-        html2canvas(document.body, {
-          scale: 2, // Увеличиваем разрешение изображения
-          scrollX: 0, // Сбрасываем прокрутку по оси X
-          scrollY: -window.scrollY // Учитываем прокрутку по оси Y
-        }).then(function(canvas) {
-          const imgData = canvas.toDataURL('image/png');
-  
-          // Устанавливаем размер изображения в PDF, чтобы оно не выходило за пределы страницы
-          const imgWidth = doc.internal.pageSize.width;
-          const imgHeight = canvas.height * imgWidth / canvas.width;
-  
-          doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-          doc.save("portfolio.pdf");
-        }).catch(function(error) {
-          console.error('Ошибка при захвате экрана:', error);
-        });
-      });
+    document.getElementById('downloadLink').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.href = 'assets/images/Portf.pdf';
+        link.download = 'MyPortfolio.pdf'; // Имя файла при скачивании
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
     </script>
-  </body>
-  </html>
+</body>
+</html>
