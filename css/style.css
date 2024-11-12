@@ -212,9 +212,9 @@ body {
 
 /* Общие стили для каждого блока */
 .experience-frame {
-  opacity: 1;
-  transform: scale(0.8) translateY(10px); /* Начинаем с маленького размера и немного сдвигаем вниз */
-  animation: fadeInUp 1s ease-out forwards;
+
+
+
   transition: transform 0.3s ease-in-out; /* Плавная анимация для увеличения */
   border-radius: 12px;
   padding: 20px;
@@ -232,7 +232,91 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
   border: 2px solid #000000; /* Черная обводка */
-  animation: experienceItemAnimation 0.8s ease-out forwards; /* Анимация появления */
+  
+}
+
+/* Плавное и небольшое приближение при наведении */
+.experience-frame,
+.experience-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+.experience-frame:hover,
+.experience-item:hover {
+    transform: scale(1.02); /* Небольшое увеличение */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Умеренная тень при наведении */
+}
+
+.experience-item .date {
+  animation-delay: 0.3s;
+}
+
+.experience-item .most-recent {
+  animation-delay: 0.6s;
+}
+
+.experience-item .role {
+  animation-delay: 0.9s;
+}
+
+.experience-item .company-info {
+  animation-delay: 1.2s;
+}
+
+/* Анимация увеличения при наведении */
+.experience-item:hover {
+  transform: scale(1.05); /* Увеличение при наведении */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Сильная тень для выделения */
+}
+
+/* Дополнительные стили */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 16px;
+  color: #000;
+}
+
+.most-recent {
+  font-size: 14px;
+  color: #DDF163;
+  background-color: #7E731266;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.role {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.company-info {
+  font-size: 16px;
+  color: #000;
+  margin-top: 5px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+  }
+}
+
+
+.experience-item p {
+  margin: 5px 0;
+}
+
+.experience-item ul {
+  margin-top: 10px;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 /* Белый фон и черный контур для второго и третьего блока */
@@ -240,6 +324,36 @@ body {
   background-color: #FFF; /* Белый фон */
   color: #000; /* Черный текст */
   border: 2px solid #000000; /* Черная обводка */
+}
+
+/* Анимация появления с небольшим сдвигом вверх */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Анимация для зеленого блока */
+@keyframes experienceItemAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Анимация увеличения при наведении */
+.experience-frame:hover {
+  transform: scale(1.05); /* Увеличение при наведении */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Сильная тень для выделения */
 }
 
 /* Дополнительные стили */
@@ -409,4 +523,3 @@ body {
   background-color: #45a049; /* Более темный зеленый при наведении */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
 }
-
