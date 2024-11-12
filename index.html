@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <div class="main">
+  <div class="main" id="content-area">
     <!-- Блок с аватаром и основным профилем -->
     <div class="head">
       <img class="Avatar" src="assets/images/profileImg.jpg" />
@@ -120,29 +120,31 @@
     <!-- Кнопка для скачивания PDF -->
     <button class="download-button" onclick="downloadPDF()">Скачать PDF</button>
     
-    <!-- Скрипт для создания PDF -->
     <script>
       function downloadPDF() {
         const { jsPDF } = window.jspdf;
-
-        html2canvas(document.body, { scale: 2 }).then(canvas => {
+    
+        // Находим элемент, который нужно захватить
+        const content = document.getElementById("content-area");
+    
+        html2canvas(content, { scale: 2 }).then(canvas => {
           const imgData = canvas.toDataURL("image/jpeg", 1.0);
           const pdf = new jsPDF("p", "mm", "a4");
+    
           const pageWidth = pdf.internal.pageSize.getWidth();
-          const pageHeight = pdf.internal.pageSize.getHeight();
-          
-          // Рассчитаем масштаб изображения
-          const imgWidth = canvas.width * 0.264583; // перевод из px в mm
-          const imgHeight = canvas.height * 0.264583; // перевод из px в mm
-          let pdfHeight = (imgHeight * pageWidth) / imgWidth;
-
+          const imgWidth = canvas.width * 0.264583; // Перевод из px в mm
+          const imgHeight = canvas.height * 0.264583; // Перевод из px в mm
+          const pdfHeight = (imgHeight * pageWidth) / imgWidth;
+    
           pdf.addImage(imgData, "JPEG", 0, 0, pageWidth, pdfHeight);
           pdf.save("portfolio.pdf");
         });
       }
     </script>
+    
 
   </div> <!-- Конец main -->
 </body>
 </html>
+
 
