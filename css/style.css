@@ -212,7 +212,7 @@ body {
 
 /* Общие стили для каждого блока */
 .experience-frame {
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.8) translateY(10px); /* Начинаем с маленького размера и немного сдвигаем вниз */
   animation: fadeInUp 1s ease-out forwards;
   transition: transform 0.3s ease-in-out; /* Плавная анимация для увеличения */
