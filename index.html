@@ -123,24 +123,22 @@
     <script>
       function downloadPDF() {
         const { jsPDF } = window.jspdf;
-    
-        // Находим элемент, который нужно захватить
         const content = document.getElementById("content-area");
+
+        html2canvas(content, { scale: 3 }).then(canvas => {
+        const imgData = canvas.toDataURL("image/png", 1.0); // PNG для более высокого качества
+        const pdf = new jsPDF("p", "mm", "a4");
     
-        html2canvas(content, { scale: 2 }).then(canvas => {
-          const imgData = canvas.toDataURL("image/jpeg", 1.0);
-          const pdf = new jsPDF("p", "mm", "a4");
-    
-          const pageWidth = pdf.internal.pageSize.getWidth();
-          const imgWidth = canvas.width * 0.264583; // Перевод из px в mm
-          const imgHeight = canvas.height * 0.264583; // Перевод из px в mm
-          const pdfHeight = (imgHeight * pageWidth) / imgWidth;
-    
-          pdf.addImage(imgData, "JPEG", 0, 0, pageWidth, pdfHeight);
-          pdf.save("portfolio.pdf");
-        });
-      }
-    </script>
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const imgWidth = canvas.width * 0.264583;
+        const imgHeight = canvas.height * 0.264583;
+        const pdfHeight = (imgHeight * pageWidth) / imgWidth;
+
+        pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pdfHeight);
+        pdf.save("portfolio.pdf");
+      });
+    }
+ </script>
     
 
   </div> <!-- Конец main -->
